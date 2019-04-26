@@ -41,7 +41,13 @@ void reset_handler(void)
 	blink_count(LED_BLUE, 20);
 
 	// execute from 0x40000000
-	??????
+	
+	(    (void(*)(void) )0x40000000)();  //########### H E R E #############
+	
+	//void (*fun_ptr)( void);  // ########### exsplain  ###########
+	//fun_ptr = (uint32_t *)0x40000000;
+	//fun_ptr();
+	// then cast addr
 
 	blink(LED_BLUE);
 }
